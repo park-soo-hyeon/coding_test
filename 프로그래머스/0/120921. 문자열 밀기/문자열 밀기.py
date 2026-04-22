@@ -4,7 +4,7 @@ def solution(A, B):
     
     result = A[len(A)-1]+A[0:len(A)-1]
         
-    for i in range(len(A)+1):
+    for i in range(len(A)):
         if (result == B):
             return i+1
         else:
