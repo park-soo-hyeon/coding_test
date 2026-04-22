@@ -1,4 +1,2 @@
-import statistics
-
 def solution(array):
-    return statistics.median(array)
+    return sorted(array)[len(array) // 2]
