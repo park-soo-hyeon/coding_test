@@ -1,5 +1,3 @@
-from itertools import groupby
-
 def solution(arr):
     answer = []
     for i in arr:
