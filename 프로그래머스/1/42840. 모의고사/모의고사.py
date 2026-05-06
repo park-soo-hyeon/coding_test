@@ -1,23 +1,22 @@
 def solution(answers):
     answer = []
+    math1 = [1, 2, 3, 4, 5]
+    math2 = [2, 1, 2, 3, 2, 4, 2, 5]
+    math3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
+    score = [0, 0, 0]
     
-    answer_sheets = [
-        [1, 2, 3, 4, 5],
-        [2, 1, 2, 3, 2, 4, 2, 5],
-        [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
-    ]
-    
-    c_dict = {
-        1 : 0,
-        2 : 0, 
-        3 : 0
-    }
-    
-    #이차원 리스트의 인덱스에 들어갈 값의 위치를 바꾸는 생각 필요
     for i in range(len(answers)):
-        for j in range(len(answer_sheets)):
-            if answers[i] == answer_sheets[j][i % len(answer_sheets[j])]:
-                c_dict[j + 1] += 1
-    answer = sorted([k for k , v in c_dict.items() if max(c_dict.values()) == v])
+        if math1[i%len(math1)] == answers[i]:
+            score[0] += 1
+        if math2[i%len(math2)] == answers[i]:
+            score[1] += 1
+        if math3[i%len(math3)] == answers[i]:
+            score[2] += 1
+    
+    m = max(score)
+    
+    for i in range(len(score)):
+        if m == score[i]:
+            answer.append(i + 1)
     
     return answer
