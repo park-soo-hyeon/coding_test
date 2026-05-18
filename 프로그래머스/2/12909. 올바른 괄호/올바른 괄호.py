@@ -8,6 +8,6 @@ def solution(s):
             stack.pop()
 
         if i == '(':
-            stack.append('(')
+            stack.append(i)
 
     return len(stack) == 0
