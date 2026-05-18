@@ -1,14 +1,13 @@
 def solution(s):
-    a = 0
+    a = list()
     
     for i in s:
         if i == '(':
-            a += 1
-        if i == ')' and a:
-            a -= 1
-        elif i == ')' and a==0:
-            return False
-    if a==0:
-        return True
-    else:
-        return False
+            a.append(i)
+        
+        if i == ')':
+            try:
+                a.pop()
+            except IndexError:
+                return False
+    return len(a) == 0
